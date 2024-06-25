@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <title>Intro SE331</title>
     <!-- Import Styles -->
     <link rel="stylesheet" href="./assets/styles.css" />
     <!-- Import Vue.js -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="app">
+      <div class="nav-bar"></div>
+      <div class="product-display">
+        <div class="product-container">
+          <div class="product-image">
+            <!-- image goes here -->
+          </div>
+        </div>
+      </div>
+      <div class="product-info">
         <h1>{{product}}</h1>
         <p>{{productDetail}}</p>
+      </div>
     </div>
 
     <!-- Import Js -->
     <script src="./main.js"></script>
-</body>
-
+  </body>
 </html>
