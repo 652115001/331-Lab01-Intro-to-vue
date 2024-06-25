@@ -16,7 +16,7 @@
         <div class="product-container">
           <div class="product-image">
             <!-- image goes here -->
-             <img :src="image">
+            <img :src="image" />
           </div>
         </div>
       </div>
@@ -26,6 +26,8 @@
         <p v-if="inventory >10">In Stock</p>
         <p v-else-if="inventory <= 10 && inventory >0">Almost out of stock</p>
         <p v-else>Out of Stock</p>
+        <p v-if="onSale">The product is onSale</p>
+        <p v-else>The product is not sale</p>
       </div>
     </div>
 
