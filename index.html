@@ -23,7 +23,7 @@
       <div class="product-info">
         <h1><a :href="productLink">{{product}}</a></h1>
         <p>{{productDetail}}</p>
-        <p v-if="inventory > 10">In Stock</p>
+        <p v-if="inventory < 7">In Stock</p>
         <p v-else>Out of Stock</p>
       </div>
     </div>
