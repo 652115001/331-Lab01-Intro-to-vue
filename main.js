@@ -8,6 +8,11 @@ createApp({
         const inStock = ref(false)
         const inventory = ref(7)
         const onSale = ref(true)
+        const details = ref([
+            '50% cotton',
+            '30% wool',
+            '20% polyester'
+        ])
         return{
             product,
             productDetail,
@@ -15,7 +20,8 @@ createApp({
             productLink,
             inStock,
             inventory,
-            onSale
+            onSale,
+            details
 
         }
     }
