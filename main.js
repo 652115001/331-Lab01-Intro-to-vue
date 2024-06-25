@@ -6,7 +6,7 @@ createApp({
         const productDetail = ref('This is boots')
         const productLink = ref('https://www.camt.cmu.ac.th/index.php/th/')
         const inStock = ref(false)
-        const inventory = ref(100)
+        const inventory = ref(7)
         return{
             product,
             productDetail,
