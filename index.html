@@ -17,7 +17,7 @@
         <div class="product-container">
           <div class="product-image">
             <!-- image goes here -->
-            <img :src="image" />
+            <img :src="image" :class="{outOfStockImage :!inStock}" />
           </div>
         </div>
       </div>
@@ -37,7 +37,7 @@
             {{variant.color}}
         </div> 
         <p><span v-for ="size in sizes" >{{size}}</span></p>
-        <button class="button" :disabled='!inStock'@click="addToCart">Add to cart</button>
+        <button class="button" :disabled='!inStock'@click="addToCart":class="{disabledButton: !inStock}">Add to cart</button>
         <button class ="button" @click="toggleInStock">toggleStock</button>
       </div>
      
