@@ -33,11 +33,11 @@
         <ul>
             <li v-for="detail in details">{{detail}}</li>
         </ul>
-        <div v-for ="variant in variants" :key = "variant.id" @mouseover ="updateImage(variant.image)">
+        <div v-for ="variant in variants" :key = "variant.id" @mouseover ="updateImage(variant.image)" class="color-circle" :style="{backgroundColor: variant.color}">
             {{variant.color}}
         </div> 
         <p><span v-for ="size in sizes" >{{size}}</span></p>
-        <button class="button" @click="addToCart">Add to cart</button>
+        <button class="button" :disabled='!inStock'@click="addToCart">Add to cart</button>
         <button class ="button" @click="toggleInStock">toggleStock</button>
       </div>
      
