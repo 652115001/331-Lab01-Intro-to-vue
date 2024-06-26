@@ -3,10 +3,10 @@ createApp({
   setup() {
     const product = ref("Boots");
     const brand = ref("SE 311");
-    const image = ref("./assets/images/socks_green.jpg");
+   
     const productDetail = ref("This is boots");
     const productLink = ref("https://www.camt.cmu.ac.th/index.php/th/");
-    const inStock = ref(false);
+   
     const inventory = ref(7);
     const onSale = ref(true);
     const details = ref(["50% cotton", "30% wool", "20% polyester"]);
@@ -42,8 +42,11 @@ createApp({
     const title = computed(() => {
       return brand.value + "" + product.value;
     });
+    const onSaleTitle = computed(() => {
+        return brand.value + "" + product.value +"Is on sale";
+      });
     const image = computed(() =>{
-        return variants.value[selectedVariants.value].image
+        return variants.value[selectedVariant.value].image
     })
     const inStock = computed(() =>{
         return variants.value[selectedVariant.value].quantity
@@ -63,6 +66,8 @@ createApp({
       addToCart,
       updateImage,
       toggleInStock,
+      updateVariant,
+      onSaleTitle
     };
   },
 }).mount("#app");
