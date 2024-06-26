@@ -8,20 +8,19 @@ createApp({
     const productLink = ref("https://www.camt.cmu.ac.th/index.php/th/");
    
     const inventory = ref(7);
-    const onSale = ref(true);
     const details = ref(["50% cotton", "30% wool", "20% polyester"]);
     const variants = ref([
       {
         id: 2234,
         color: "green",
         image: "./assets/images/socks_green.jpg",
-        quantity: 50,
+        quantity: 50, onSale:true
       },
       {
         id: 2235,
         color: "blue",
         image: "./assets/images/socks_blue.jpg",
-        quantity: 0,
+        quantity: 0, onsale:false
       },
     ]);
     const selectedVariant = ref(0);
@@ -50,6 +49,9 @@ createApp({
     })
     const inStock = computed(() =>{
         return variants.value[selectedVariant.value].quantity
+    })
+    const onSale = computed(() =>{
+        return variants.value[selectedVariant.value].onSale
     })
     return {
       productDetail,
