@@ -23,6 +23,7 @@ createApp({
             'M',
             'L'
         ])
+        const cart = ref(0)
         return{
             product,
             productDetail,
@@ -33,7 +34,8 @@ createApp({
             onSale,
             details,
             variants,
-            sizes
+            sizes,
+            cart
 
         }
     }
