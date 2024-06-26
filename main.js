@@ -1,4 +1,4 @@
-const { createApp, ref } = Vue
+const { createApp, ref ,computed } = Vue
 createApp({
     setup(){
         const product = ref('Boots')
@@ -35,8 +35,11 @@ createApp({
         function toggleInStock(){
             inStock.value = !inStock.value
         }
+        const title = computed(() =>{
+            return brand.value +''+product.value
+        })
         return{
-            product,
+           
             productDetail,
             image,
             productLink,
@@ -47,7 +50,7 @@ createApp({
             variants,
             sizes,
             cart,
-            brand,
+            title,
             addToCart,
             updateImage,
             toggleInStock
