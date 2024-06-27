@@ -30,7 +30,10 @@ const productDisplay = {
         <button class ="button" @click="toggleInStock">toggleStock</button>
       </div>
      `,
-     setup() {
+     props:{
+        premium: Boolean
+     },
+        setup(props){
         const product = ref("Boots");
         const brand = ref("SE 311");
        
@@ -99,7 +102,8 @@ const productDisplay = {
           updateImage,
           toggleInStock,
           updateVariant,
-          onSaleTitle
+          onSaleTitle,
+          shipping
         };
       },
 }
