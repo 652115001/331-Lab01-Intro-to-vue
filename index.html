@@ -13,35 +13,7 @@
     <div id="app">
       <div class="nav-bar"></div>
       <div class="cart">Cart({{cart}})</div>
-      <div class="product-display">
-        <div class="product-container">
-          <div class="product-image">
-            <!-- image goes here -->
-            <img :src="image" :class="{outOfStockImage :!inStock}" />
-          </div>
-        </div>
-      </div>
-      <div class="product-info">
-        <h1 v-if ="onSale"><a :href="productLink">{{onSaleTitle}}</a></h1>
-        <h1 v-else ="onSale"><a :href="productLink">{{title}}</a></h1>
-        <p>{{productDetail}}</p>
-       
-        <p v-if="!inStock">Out of Stock</p>
-                <p v-else-if="inventory > 10">In Stock</p>
-                <p v-else-if="inventory > 0">Low Stock</p>
-                <p v-else>Out of Stock</p>
-        <p v-if="onSale">The product is onSale</p>
-        <p v-else>The product is not sale</p>
-        <ul>
-            <li v-for="detail in details">{{detail}}</li>
-        </ul>
-        <div v-for ="(variant,index) in variants" :key = "variant.id" @mouseover ="updateVariant(index)" class="color-circle" :style="{backgroundColor: variant.color}">
-            {{variant.color}}
-        </div> 
-        <p><span v-for ="size in sizes" >{{size}}</span></p>
-        <button class="button" :disabled='!inStock'@click="addToCart":class="{disabledButton: !inStock}">Add to cart</button>
-        <button class ="button" @click="toggleInStock">toggleStock</button>
-      </div>
+      <product-display></product-display>
      
     </div>
 
