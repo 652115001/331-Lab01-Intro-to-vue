@@ -1,3 +1,8 @@
+const app = createApp({
+
+})
+app.component('product-display',productDisplay)
+app.mount('#app')
 const productDisplay = {
     template:`
     <div class="product-display">
