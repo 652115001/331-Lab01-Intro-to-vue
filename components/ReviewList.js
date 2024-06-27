@@ -6,7 +6,7 @@ const reviewList = {
         <li v-for="(review, index) in reviews" :key="index">
             {{ review.name }} gave this {{ review.rating }} stars
             <br/>
-            "{{ review.review }}"
+            "{{ review.review }}" You shoud use this store ?"{{review.recommend}}"
             <br/>
         </li>
         </ul>
