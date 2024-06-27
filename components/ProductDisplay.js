@@ -27,7 +27,7 @@ const productDisplay = {
           <p><span v-for ="size in sizes" >{{size}}</span></p>
           <button class="button" :disabled='!inStock'@click="addToCart":class="{disabledButton: !inStock}">Add to cart</button>
           <button class ="button" @click="toggleInStock">toggleStock</button>
-          <review-form></review-form>
+          <review-form @review-submitted="addReview"></review-form>
           
         </div>
        `,
@@ -96,6 +96,10 @@ const productDisplay = {
       const onSale = computed(() => {
         return variants.value[selectedVariant.value].onSale;
       });
+      const reviews = ref([])
+      function addReview(review){
+        reviews.value.push(review)
+      }
       return {
         productDetail,
         image,
@@ -113,6 +117,8 @@ const productDisplay = {
         updateVariant,
         onSaleTitle,
         shipping,
+        reviews,
+        addReview
       };
     },
   };
