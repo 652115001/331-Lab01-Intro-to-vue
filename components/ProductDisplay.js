@@ -27,7 +27,7 @@ const productDisplay = {
           <p><span v-for ="size in sizes" >{{size}}</span></p>
           <button class="button" :disabled='!inStock'@click="addToCart":class="{disabledButton: !inStock}">Add to cart</button>
           <button class ="button" @click="toggleInStock">toggleStock</button>
-          <review-list :reviews="reviews"></review-list>
+          <review-list v-if="reviews.length" :reviews="reviews"></review-list>
           <review-form @review-submitted="addReview"></review-form>
         </div>
        `,
